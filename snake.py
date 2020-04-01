@@ -13,16 +13,21 @@ blue = (50, 153, 213)
 pink = (200, 0, 0)
 purple = (135, 100, 140)
 
+easy = 5
+medium = 15
+hard = 50
+level = 15
+
 dis_width = 600
 dis_height = 400
 
 dis = pygame.display.set_mode((dis_width, dis_height))
-pygame.display.set_caption('Snake Game')
+pygame.display.set_caption("Dilan's Snake Game")
 
 clock = pygame.time.Clock()
 
 snake_block = 10
-snake_speed = 20
+snake_speed = level/1.2
 
 font_style = pygame.font.SysFont("bahnschrift", 20)
 score_font = pygame.font.SysFont("bahnschrift", 20)
@@ -117,7 +122,7 @@ def gameLoop():
         if x1 == foodx and y1 == foody:
             foodx = round(random.randrange(0, dis_width - snake_block) / 10.0) * 10.0
             foody = round(random.randrange(0, dis_height - snake_block) / 10.0) * 10.0
-            Length_of_snake += 1
+            Length_of_snake += level
 
         clock.tick(snake_speed)
 
